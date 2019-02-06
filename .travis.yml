@@ -1,6 +1,7 @@
 language: php
 sudo: false
 php:
+  - nightly
   - 7.3
   - 7.2
   - 7.1
@@ -11,7 +12,9 @@ php:
 matrix:
   fast_finish: true
   allow_failures:
-    - php: 7.3
+    - php:
+        - 7.3
+        - nightly
 install:
   - pear list
   - pear channel-update pear
