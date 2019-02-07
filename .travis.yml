@@ -15,14 +15,6 @@ matrix:
     - php:
         - 7.3
         - nightly
-install:
-  - pear list
-  - pear channel-update pear
-  - pear install -f pear-1.10.1
-  - pear install text_diff
-  - pear list
-  - sh scripts/pear.sh config-set umask 0022
-  - sh scripts/pear.sh config-set umask 0022 system
 script:
   - umask 0022
   - sh scripts/pear.sh run-tests -q -d -r tests
